@@ -8,6 +8,7 @@ public class Game {
 
 	public static void main(String[] args) {
 		System.out.println("Countries Game");
+		System.out.println("Type 'exit' to stop the game");
 		Console console = System.console();
 		BufferedReader br = null;
 		int total = 0;
@@ -21,6 +22,9 @@ public class Game {
 				String country = cols[0];
 				String continent = cols[1];
 				String answer = console.readLine("which continent does " + country + " belong to?");
+				if(answer.equalsIgnoreCase("exit")) {
+					break;
+				}
 				if (answer.equalsIgnoreCase(continent)) {
 					System.out.println("Correct!");
 					correct++;
